@@ -1,0 +1,20 @@
+<div class="block upcoming-events">
+	<h2 class="block-title">Teaser List Title</h2>
+	{% for post in site.posts %}
+	  {% if post.layout == "[insert post type you'd like to include]" %}
+    <article class="events teaser {{ thecycle }}">
+      {% if post.hero %}
+        <div class="field-type-image">
+          <img src="{{ post.hero }}" />
+        </div>
+      {% endif %}
+      <div class="field-group-summary">
+        <div class="field-title">
+          <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+        </div>
+      </div>
+    </article>
+	  {% endif %}
+	{% endfor %}
+</div>
+
